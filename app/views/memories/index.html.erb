@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Souvenirs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memories.each do |memory| %>
+      <tr>
+        <td><%= memory.text %></td>
+        <td><%= link_to 'Voir', memory %></td>
+        <td><%= link_to 'Modifier', edit_memory_path(memory) %></td>
+        <td><%= link_to 'Supprimer', memory, method: :delete, data: { confirm: 'Êtes vous sûr?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouveau souvenir', new_memory_path %>

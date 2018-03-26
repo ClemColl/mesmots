@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @memory.text %>
+</p>
+
+<%= link_to 'Modifier', edit_memory_path(@memory) %> |
+<%= link_to 'Retour', memories_path %>
