@@ -23,6 +23,7 @@ class MemoriesController < ApplicationController
   # POST /memories
   def create
     @memory = Memory.new(memory_params)
+    @memory.user_id = current_user.id
 
     if @memory.save
       redirect_to @memory, notice: 'Memory was successfully created.'
