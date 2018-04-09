@@ -12,16 +12,22 @@
     <%= yield %>
 
     <% unless controller_name == "errors" %>
-    <ul> 
-      <li><%= link_to "Accueil", home_path %></li>
+    <nav>
+        <%= link_to "Accueil", home_path %>
 
-      <% if user_signed_in? %>
-        <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete  %></li>
-      <% else %>
-        <li><%= link_to "Se connecter", new_user_session_path  %></li>
-        <li><%= link_to "S'inscrire", new_user_registration_path %></li>
-      <% end %>
-    </ul>
+        <% if user_signed_in? %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete  %>
+        <% else %>
+          <%= link_to "Se connecter", new_user_session_path  %>
+          <%= link_to "S'inscrire", new_user_registration_path %>
+        <% end %>
+        
+        <div class="reso">
+          <%= link_to "Instagram", 'https://instagram.com/'%>
+          <%= link_to "Twitter", 'https://twitter.com/'%>
+          <%= link_to "Facebook", 'https://facebook.com/'%>
+        </div>
+    </nav>
   <% end %>
 
   </body>

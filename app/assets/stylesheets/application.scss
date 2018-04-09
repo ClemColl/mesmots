@@ -15,6 +15,21 @@
  */
  @import "bootstrap";
 
-body {
-    margin-left:50px
-}
+ nav {
+    position: fixed;
+    bottom: 0;
+    background-color:#309BF8;
+    height:50px;
+    width:100%;
+    z-index: 2;
+    text-decoration:none;
+    color:white;
+ }
+
+ .reso {
+     float:right;
+ }
+
+ nav a {
+    color:white;
+ }

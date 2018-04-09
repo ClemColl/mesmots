@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20180326084449) do
   enable_extension "plpgsql"
 
   create_table "memories", force: :cascade do |t|
-    t.string "text"
+    t.text "text"
+    t.string "title"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
