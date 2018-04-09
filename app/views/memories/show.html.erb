@@ -1,9 +1,42 @@
-<p id="notice"><%= notice %></p>
+ <style>
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
-<p>
-  <strong>Text:</strong>
-  <%= @memory.text %>
-</p>
+.left {
+  left: 0;
+}
 
-<%= link_to 'Modifier', edit_memory_path(@memory) %> |
-<%= link_to 'Retour', memories_path %>
+.right {
+  right: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+ </style>
+ 
+ <div class="split left">
+  <div class="centered">
+    <img src="img_avatar2.png" alt="memory image">
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    <%= link_to 'Retour', memories_path %>
+    <h2>memory.title</h2>
+    <p><%= @memory.text %></p>
+    <%= link_to 'Modifier', edit_memory_path(@memory) %>
+  </div>
+</div>
