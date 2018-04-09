@@ -9,16 +9,11 @@
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <ul>
-      
-      <% if user_signed_in? %>
-        <li><%= link_to 'Mes souvenirs', memories_path %></li>
-      <% end %>
-        
-        <li><%= link_to "Accueil", home_path %></li>
-        <li><%= link_to "A propos", about_path %></li>
+    <%= yield %>
+
+    <% unless controller_name == "errors" %>
+    <ul> 
+      <li><%= link_to "Accueil", home_path %></li>
 
       <% if user_signed_in? %>
         <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete  %></li>
@@ -26,9 +21,8 @@
         <li><%= link_to "Se connecter", new_user_session_path  %></li>
         <li><%= link_to "S'inscrire", new_user_registration_path %></li>
       <% end %>
+    </ul>
+  <% end %>
 
-      </ul>
-
-    <%= yield %>
   </body>
 </html>
