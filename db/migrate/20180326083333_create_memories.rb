@@ -1,7 +1,8 @@
 class CreateMemories < ActiveRecord::Migration[5.1]
   def change
     create_table :memories do |t|
-      t.string :text
+      t.text :text
+      t.string :title
       t.integer :user_id
 
       t.timestamps
