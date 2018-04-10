@@ -1,12 +1,13 @@
-<%= link_to 'deco', destroy_user_session_path, method: :delete%>
 <% @pageTitle = "Mes Souvenirs" %>
 
   <% @memories.each do |memory| %>
+    <div>
       <p><%= memory.title %> <br>
       <%= memory.text %> 
       <%= link_to 'Voir', memory %> 
       <%= link_to 'Modifier', edit_memory_path(memory) %> 
       <%= link_to 'Supprimer', memory, method: :delete, data: { confirm: 'Êtes vous sûr?' } %></p>
+    </div>
   <% end %>
 
 <br>
