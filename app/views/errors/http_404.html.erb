@@ -1,10 +1,12 @@
-
-<h1>The page you were looking for doesn't exist.</h1>
+  <div class="tout" >
+   <div class="black">
     <p class="ok"><%= @code %></p>
-    <p>You may have mistyped the address or the page may have moved.</p>
-    <p>If you are the application owner check the logs for more information.</p>
-  <div class="lien"><%=link_to "GO TO HOME", home_path,class:"Home" %></p>
-<footer>
-  <h2> Excepteur occaeuicat cupidat</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur expedita fuga illo, saepe! Soluta similique quam, ad quos exercitationem autem quo iure minus excepturi velit laboriosam in qui? Itaque, quae.</p>
-</footer>
+    <p class="you">Oups! Tu t'es perdu</p>
+  <div class="lien"><button><%=link_to "Accueil", home_path,class:"Home" %></button></div>
+</div>
+  <footer>
+    <p class="ph">La page n'a pas été trouvée</p>
+    <p>Nous recherhons cette page.Êtes-vous certain d'avoir entré le bon URL?<br> N'hésitez pas à prendre contact avec le propiètaire du site que vous<br> recherchez</p>
+  </footer>
+
+</div>
