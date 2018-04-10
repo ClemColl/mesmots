@@ -1,5 +1,5 @@
 <%= link_to 'deco', destroy_user_session_path, method: :delete%>
-<h1>Souvenirs</h1>
+<% @pageTitle = "Mes Souvenirs" %>
 
   <% @memories.each do |memory| %>
       <p><%= memory.title %> <br>
