@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
 
 
 @import url(font-awesome.min.css);
@@ -1701,7 +1700,6 @@
     -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border-bottom: dotted 1px;
     text-decoration: none;
   }
 
@@ -3587,10 +3585,8 @@
     max-width: 72rem;
     z-index: 2;
   }
-
-    #main > * {
+    #main > *:not(a){
       padding: 4rem 4rem 2rem 4rem ;
-      border-top: solid 2px #eeeeee;
       margin: 0;
     }
 
@@ -4302,6 +4298,8 @@
 
     }
 
+/* */
+.hiddenNickname { display: none; }
 /* Nav Panel */
 
   #navPanelToggle {

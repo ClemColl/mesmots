@@ -9,26 +9,28 @@
   </head>
 
   <body>
-    <%= yield %>
-
-    <% unless controller_name == "errors" %>
-    <nav>
-        <%= link_to "Accueil", home_path %>
-
-        <% if user_signed_in? %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete  %>
-        <% else %>
-          <%= link_to "Se connecter", new_user_session_path  %>
-          <%= link_to "S'inscrire", new_user_registration_path %>
-        <% end %>
-        
-        <div class="reso">
-          <%= link_to "Instagram", 'https://instagram.com/'%>
-          <%= link_to "Twitter", 'https://twitter.com/'%>
-          <%= link_to "Facebook", 'https://facebook.com/'%>
-        </div>
-    </nav>
+  <%= link_to home_path do %>
+    <%= image_tag "logoblc.png", style:"display:block;width:50%;margin-left:auto;margin-right:auto;" %>
   <% end %>
+    <% if !(controller.controller_name == "static" && controller.action_name == "home") %>		
+      <nav id="nav">	
+        <ul class="links">
+          <li class="active"><a>This is Massively</a></li>
+        </ul>
+        <ul class="icons">
+          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+      </nav>
+      
+  <div id="main">
+    <%= yield %>
+  </div>
 
+    <% else %>
+    
+      <%= yield %>
+    <% end %>
   </body>
 </html>

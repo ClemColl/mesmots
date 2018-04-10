@@ -1,7 +1,7 @@
-<%= link_to 'Retour', memories_path %>
-  <h2><%= @memory.title %></h2>
-  <h4><%= @memory.subtitle %></h4>
-  <p><%= @memory.date %></p>
-  <p><%= @memory.text %></p>
-<%= link_to 'Modifier', edit_memory_path(@memory) %>
+<%= link_to 'Retour', memories_path,style: "border:none;" %>
+  <h2 style="border:none;"><%= @memory.title %></h2>
+  <h4 style="border:none;padding-top:0;"><%= @memory.subtitle %></h4>
+  <p style="border:none;padding-top:0;"><%= I18n.l @memory.date, :format => :long %></p>
+  <p style="border:none;"><%= @memory.text %></p>
+<%= link_to 'Modifier', edit_memory_path(@memory),style: "border-top:none;" %>
 

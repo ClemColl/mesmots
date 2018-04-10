@@ -12,14 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :memory_title %>
+    <%= form.label :title, "titre" %>
+    <%= form.text_field :title, id: :memory_title, style:"width:50%;" %>
   </div>
 
   <div class="field">
-    <%= form.label :subtitle %>
-    <%= form.text_area :subtitle, id: :memory_subtitle %>
+    <%= form.label :subtitle, "sous-titre" %>
+    <%= form.text_field :subtitle, id: :memory_subtitle, style:"width:50%;" %>
   </div>
+
 
   <div class="field">
     <%= form.label :date %>
@@ -27,11 +28,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :text %>
+    <%= form.label :text, "text" %>
     <%= form.text_area :text, id: :memory_text %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Enregistrer la mémoire" %>
   </div>
 <% end %>
