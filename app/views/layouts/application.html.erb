@@ -15,7 +15,7 @@
     <% if !(controller.controller_name == "static" && controller.action_name == "home") %>		
       <nav id="nav">	
         <ul class="links">
-          <li class="active"><a>This is Massively</a></li>
+          <li class="active"><a><%= @pageTitle %></a></li>
         </ul>
         <ul class="icons">
           <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
