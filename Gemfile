@@ -31,6 +31,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'devise-i18n'
+gem 'mail_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
