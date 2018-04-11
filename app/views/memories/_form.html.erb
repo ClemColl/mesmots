@@ -24,15 +24,17 @@
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_field :date, id: :memory_date %>
+    <%= form.date_field :date, id: :memory_date, style:"width:50%;" %>
   </div>
 
   <div class="field">
-    <%= form.label :text, "text" %>
+    <%= form.label :text, "texte" %>
     <%= form.text_area :text, id: :memory_text %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Enregistrer la mémoire" %>
+    <%= link_to 'Retour', memories_path, class: "buttonH" %>
+    <%= form.submit "Enregistrer la mémoire", style: "float:right;" %>
   </div>
 <% end %>
+

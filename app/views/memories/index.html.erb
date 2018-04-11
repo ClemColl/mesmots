@@ -1,14 +1,15 @@
-<%= link_to 'deco', destroy_user_session_path, method: :delete%>
 <% @pageTitle = "Mes Souvenirs" %>
-
+<section class="posts">
   <% @memories.each do |memory| %>
-      <p><%= memory.title %> <br>
-      <%= memory.text %> 
-      <%= link_to 'Voir', memory %> 
-      <%= link_to 'Modifier', edit_memory_path(memory) %> 
-      <%= link_to 'Supprimer', memory, method: :delete, data: { confirm: 'Êtes vous sûr?' } %></p>
+    <article>
+      <header>
+        <% if memory.date %><span class="date"><%=I18n.l memory.date, :format => :long%></span><% end %>
+        <h2><%= memory.title %></h2>
+      </header>
+      <p><%= memory.text[0..99] %>...</p>
+      <ul class="actions">
+        <li><%= link_to 'Lire la suite', memory, class:"buttonL", style:"background-color:white;border-color:1px solid #C33E3B" %> </li>
+      </ul>
+    </article>
   <% end %>
-
-<br>
-
-<%= link_to 'Nouveau souvenir', new_memory_path %>
+</section>

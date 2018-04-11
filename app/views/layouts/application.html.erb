@@ -10,17 +10,23 @@
 
   <body>
   <%= link_to home_path do %>
-    <%= image_tag "logoblc.png", style:"display:block;width:50%;margin-left:auto;margin-right:auto;" %>
+    <%= image_tag "logoblcaca.png", style:"display:block;width:50%;margin-left:auto;margin-right:auto;" %>
   <% end %>
-    <% if !(controller.controller_name == "static" && controller.action_name == "home") %>		
+    <% if !(controller.controller_name == "static" && controller.action_name == "home") && !(controller.controller_name == "errors" && controller.action_name == "http_404") %>		
       <nav id="nav">	
         <ul class="links">
           <li class="active"><a><%= @pageTitle %></a></li>
+            <% if controller.controller_name == "memories" %>
+              <%= link_to 'Nouveau souvenir', new_memory_path, style: "margin-left:20px;" %>
+            <% end %>
+
         </ul>
         <ul class="icons">
-          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="<%= home_path %>" class="icon fa-home"></a></li>
+          <% if current_user %>
+            <li><a href="<%= edit_user_registration_path %>" class="icon fa-user"></a></li>
+            <li><%= link_to destroy_user_session_path, method: :delete do %> <i class="icon fa-power-off"></i> <% end %></li>
+          <% end %>
         </ul>
       </nav>
       

@@ -1,5 +1,7 @@
 <% @pageTitle = "Mon compte" %>
 
+
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -17,7 +19,7 @@
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> caractères minimum</em>
     <% end %>
   </div>
 
@@ -32,12 +34,12 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Mettre à jour" %>
+  <%= link_to 'Retour', home_path , class: "buttonH" %>
+    <%= f.submit "Mettre à jour",style:"float:right;" %>
   </div>
+  <div style="margin-left:24px;margin-top:30px;">
+    <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes vous sûr?" }, method: :delete, class: "buttonH" %>
+    </div>
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Êtes vous sûr?" }, method: :delete %></p>
-
-<%= link_to "Retour", :back %>

@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
@@ -1640,7 +1641,7 @@
   }
 
   body {
-    background-color: #1e252d;
+    background-color: #191516;
   }
 
     body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1702,10 +1703,6 @@
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     text-decoration: none;
   }
-
-    a:hover {
-      border-bottom-color: transparent;
-    }
 
   strong, b {
     font-weight: 600;
@@ -1836,11 +1833,6 @@
     border-bottom-color: rgba(33, 41, 49, 0.5);
   }
 
-    a:hover {
-      border-bottom-color: transparent;
-      color: #18bfef !important;
-    }
-
   strong, b {
     color: #212931;
   }
@@ -1850,16 +1842,16 @@
   }
 
   blockquote {
-    border-left-color: #eeeeee;
+    border-left-color: #C33E3B;
   }
 
   code {
     background: rgba(220, 220, 220, 0.25);
-    border-color: #eeeeee;
+    border-color: #C33E3B;
   }
 
   hr {
-    border-bottom-color: #eeeeee;
+    border-bottom-color: #C33E3B;
   }
 
 /* Box */
@@ -1883,7 +1875,7 @@
     }
 
   .box {
-    border-color: #eeeeee;
+    border-color: #C33E3B;
   }
 
 /* Button */
@@ -1891,6 +1883,7 @@
   input[type="submit"],
   input[type="reset"],
   input[type="button"],
+  input[type="date"],
   button,
   .button {
     -moz-appearance: none;
@@ -1996,6 +1989,7 @@
       input[type="submit"],
       input[type="reset"],
       input[type="button"],
+      input[type="date"],
       button,
       .button {
         font-size: 0.9rem;
@@ -2041,15 +2035,6 @@
     color: #212931 !important;
   }
 
-    input[type="submit"]:hover,
-    input[type="reset"]:hover,
-    input[type="button"]:hover,
-    button:hover,
-    .button:hover {
-      box-shadow: inset 0 0 0 2px #18bfef;
-      color: #18bfef !important;
-    }
-
     input[type="submit"].special,
     input[type="reset"].special,
     input[type="button"].special,
@@ -2059,14 +2044,6 @@
       box-shadow: none;
       color: #ffffff !important;
     }
-
-      input[type="submit"].special:hover,
-      input[type="reset"].special:hover,
-      input[type="button"].special:hover,
-      button.special:hover,
-      .button.special:hover {
-        background-color: #18bfef;
-      }
 
 /* Form */
 
@@ -2185,6 +2162,7 @@
   input[type="text"],
   input[type="password"],
   input[type="email"],
+  input[type="date"],
   select,
   textarea {
     -moz-appearance: none;
@@ -2244,6 +2222,7 @@
   input[type="text"],
   input[type="password"],
   input[type="email"],
+  input[type="date"],
   select {
     height: 3rem;
   }
@@ -2341,9 +2320,10 @@
   input[type="text"],
   input[type="password"],
   input[type="email"],
+  input[type="date"],
   select,
   textarea {
-    border-color: #eeeeee;
+    border-color: #C33E3B;
   }
 
     input[type="text"]:focus,
@@ -2351,7 +2331,7 @@
     input[type="email"]:focus,
     select:focus,
     textarea:focus {
-      border-color: #18bfef;
+      border-color: #C33E3B;
     }
 
   select option {
@@ -2370,7 +2350,7 @@
 
     input[type="checkbox"] + label:before,
     input[type="radio"] + label:before {
-      border-color: #eeeeee;
+      border-color: #C33E3B;
     }
 
   input[type="checkbox"]:checked + label:before,
@@ -2382,7 +2362,7 @@
 
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
-    border-color: #18bfef;
+    border-color: #C33E3B;
   }
 
   ::-webkit-input-placeholder {
@@ -2708,16 +2688,8 @@
     border-top-color: #eeeeee;
   }
 
-  ul.icons li a.icon:hover:before {
-    color: #18bfef;
-  }
-
   ul.icons.alt li .icon:before {
     box-shadow: inset 0 0 0 2px #eeeeee;
-  }
-
-  ul.icons.alt li a.icon:hover:before {
-    box-shadow: inset 0 0 0 2px #18bfef;
   }
 
 /* Section/Article */
@@ -2895,7 +2867,7 @@
       }
 
   table tbody tr {
-    border-color: #eeeeee;
+    border-color: #C33E3B;
   }
 
     table tbody tr:nth-child(2n + 1) {
@@ -2915,7 +2887,7 @@
   }
 
   table.alt tbody tr td {
-    border-color: #eeeeee;
+    border-color: #C33E3B;
   }
 
 /* Pagination */
@@ -3000,22 +2972,12 @@
     }
 
   .pagination a, .pagination span {
-    border-color: #eeeeee;
+    border-color: #C33E3B;
   }
 
   .pagination a {
     color: #212931 !important;
   }
-
-    .pagination a:hover {
-      color: #18bfef !important;
-      border-color: #18bfef;
-      z-index: 1;
-    }
-
-      .pagination a:hover + a, .pagination a:hover + span {
-        border-left-color: #18bfef;
-      }
 
     .pagination a.active {
       background-color: #eeeeee;
@@ -3135,11 +3097,6 @@
       border-bottom-color: rgba(255, 255, 255, 0.5);
     }
 
-      #intro a:hover {
-        border-bottom-color: transparent;
-        color: #18bfef !important;
-      }
-
     #intro strong, #intro b {
       color: #ffffff;
     }
@@ -3171,15 +3128,6 @@
       color: #ffffff !important;
     }
 
-      #intro input[type="submit"]:hover,
-      #intro input[type="reset"]:hover,
-      #intro input[type="button"]:hover,
-      #intro button:hover,
-      #intro .button:hover {
-        box-shadow: inset 0 0 0 2px #18bfef;
-        color: #18bfef !important;
-      }
-
       #intro input[type="submit"].special,
       #intro input[type="reset"].special,
       #intro input[type="button"].special,
@@ -3189,14 +3137,6 @@
         box-shadow: none;
         color: #1e252d !important;
       }
-
-        #intro input[type="submit"].special:hover,
-        #intro input[type="reset"].special:hover,
-        #intro input[type="button"].special:hover,
-        #intro button.special:hover,
-        #intro .button.special:hover {
-          background-color: #18bfef;
-        }
 
     #intro h1 {
       font-size: 5rem;
@@ -3437,7 +3377,7 @@
     -webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
     -ms-transition: -ms-transform 1s ease, opacity 1s ease;
     transition: transform 1s ease, opacity 1s ease;
-    background: rgba(255, 255, 255, 0.175);
+    background: #191516;
     height: 4rem;
     line-height: 4rem;
     margin: -4rem auto 0 auto;
@@ -3453,16 +3393,8 @@
       border-top-color: #ffffff;
     }
 
-    #nav ul.icons li a.icon:hover:before {
-      color: #18bfef;
-    }
-
     #nav ul.icons.alt li .icon:before {
       box-shadow: inset 0 0 0 2px #ffffff;
-    }
-
-    #nav ul.icons.alt li a.icon:hover:before {
-      box-shadow: inset 0 0 0 2px #18bfef;
     }
 
     #nav input, #nav select, #nav textarea {
@@ -3475,8 +3407,7 @@
     }
 
       #nav a:hover {
-        border-bottom-color: transparent;
-        color: #18bfef !important;
+        color: #C33E3B !important;
       }
 
     #nav strong, #nav b {
@@ -3533,15 +3464,10 @@
           -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
           transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
           display: block;
-          font-size: 0.8rem;
+          font-size: 1.4rem;
           outline: none;
           padding: 0 2rem;
         }
-
-          #nav ul.links li a:hover {
-            color: inherit !important;
-            background-color: rgba(255, 255, 255, 0.1);
-          }
 
         #nav ul.links li.active {
           background-color: #ffffff;
@@ -3550,10 +3476,6 @@
           #nav ul.links li.active a {
             color: #1e252d;
           }
-
-            #nav ul.links li.active a:hover {
-              color: #18bfef !important;
-            }
 
     #nav ul.icons {
       -moz-flex-grow: 0;
@@ -3682,7 +3604,7 @@
       }
 
       #main > .posts > article {
-        border-color: #eeeeee;
+        border-color: black;
         border-left-width: 2px;
         border-style: solid;
         border-top-width: 2px;
@@ -3876,7 +3798,7 @@
       #footer input[type="email"]:focus,
       #footer select:focus,
       #footer textarea:focus {
-        border-color: #18bfef;
+        border-color: #C33E3B;
       }
 
     #footer select option {
@@ -3907,7 +3829,7 @@
 
     #footer input[type="checkbox"]:focus + label:before,
     #footer input[type="radio"]:focus + label:before {
-      border-color: #18bfef;
+      border-color: #C33E3B;
     }
 
     #footer ::-webkit-input-placeholder {
@@ -4495,4 +4417,41 @@
       visibility: visible;
     }
 
+  }
+
+
+  input[type="submit"] {
+    background-color: #C33E3B;
+    color:white !important;
+    box-shadow: none;
+  }
+  
+  .buttonHome1 {
+      border:1px solid #C33E3B;
+      color: #C33E3B !important;
+      font-family: 'Source Sans Pro';
+      border-radius:5px;
+      box-shadow: none;
+  }
+
+  .buttonHome1 {
+    border:1px solid #C33E3B;
+    color: #C33E3B;
+    font-family: 'Source Sans Pro';
+    border-radius:5px;
+    box-shadow: none;
+    float:left;
+    padding:0px 12px;
+  }
+
+  .buttonHome2 {
+    background-color:#C33E3B;
+    color: white;
+    font-family: 'Source Sans Pro';
+    border-radius:5px;
+    border:none;
+    box-shadow: none;
+    float:right;
+    margin-right:10%;
+    padding:0px 12px;
   }
