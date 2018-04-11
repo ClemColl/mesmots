@@ -16,14 +16,17 @@
       <nav id="nav">	
         <ul class="links">
           <li class="active"><a><%= @pageTitle %></a></li>
+            <% if controller.controller_name == "memories" && controller.action_name == "index" %>
+              <%= link_to 'Nouveau souvenir', new_memory_path, style: "margin-left:20px;" %>
+            <% end %>
+
         </ul>
         <ul class="icons">
           <li><a href="<%= home_path %>" class="icon fa-home"></a></li>
           <% if current_user %>
             <li><a href="<%= edit_user_registration_path %>" class="icon fa-user"></a></li>
-            <li><%= link_to 'X', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to destroy_user_session_path, method: :delete do %> <i class="icon fa-power-off"></i> <% end %></li>
           <% end %>
-          <li><a href="https://www.facebook.com/mesmotsfrance/" target="_blank" class="icon fa-facebook" style="color:#C33E3B;"></a></li>
         </ul>
       </nav>
       
