@@ -1,4 +1,4 @@
-<% @pageTitle = "Mémoire" %>
+<% @pageTitle = @memory.title %>
 
   <h2 style="border:none;"><%= @memory.title %></h2>
   <h4 style="border:none;padding-top:0;"><%= @memory.subtitle %></h4>
@@ -6,8 +6,8 @@
   <p style="border:none;"><%= @memory.text %></p>
 
 <div class="actions">
-<%= link_to 'Retour', memories_path, class: "buttonH" %>
-<%= link_to 'Modifier', edit_memory_path(@memory), class: "buttonH", style: "float:right;" %>
+<%= link_to 'Retour', memories_path, class: "linkRED" %>
+<%= link_to 'Modifier', edit_memory_path(@memory), class: "linkRED" %>
 </div>
 
 

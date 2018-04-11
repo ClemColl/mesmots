@@ -1,42 +1,71 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mesmots</title>
+    <title>MesMots</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <%= link_to home_path do %>
-    <%= image_tag "logoblcaca.png", style:"display:block;width:50%;margin-left:auto;margin-right:auto;" %>
-  <% end %>
-    <% if !(controller.controller_name == "static" && controller.action_name == "home") && !(controller.controller_name == "errors" && controller.action_name == "http_404") %>		
-      <nav id="nav">	
-        <ul class="links">
-          <li class="active"><a><%= @pageTitle %></a></li>
-            <% if controller.controller_name == "memories" %>
-              <%= link_to 'Nouveau souvenir', new_memory_path, style: "margin-left:20px;" %>
+    <div id="wrapper" class="fade-in">
+    <!-- Setting home image -->
+      <% if controller.controller_name == "static" && controller.action_name == "home" %>
+        <%= image_tag "logobeige.png", class: "homeLogo" %>
+      <% else %>
+        <%= image_tag "logobeige.png", class: "logo" %>
+      <% end %>
+      <!-- Setting nav bar -->
+      <% if !(controller.controller_name == "static" && controller.action_name == "home") && !(controller.controller_name == "errors" && controller.action_name == "http_404") %>		
+        <nav id="nav">	
+          <ul class="links">
+            <% if controller.controller_name == "memories" && controller.action_name == "show" %>
+              <li><%= link_to 'Mes souvenirs', memories_url %></li>
+              <li class="active"><a><%= @pageTitle %></a></li>
+              <li><%= link_to 'Nouveau souvenir', new_memory_path, class: "newSouve" %></li>
+            <% elsif controller.controller_name == "memories" && controller.action_name == "new" %>
+              <li><%= link_to 'Mes souvenirs', memories_url %></li>
+              <li class="active"><a><%= @pageTitle %></a></li>
+            <% elsif controller.controller_name == "memories" && controller.action_name == "index" %>
+              <li class="active"><%= link_to 'Mes souvenirs', memories_url %></li>
+              <li><%= link_to 'Nouveau souvenir', new_memory_path, class: "newSouve" %></li>
+            <% else %>
+              <% if current_user %>
+                <li><%= link_to 'Mes souvenirs', memories_url %></li>
+              <% end %>
+              <li class="active"><a><%= @pageTitle %></a></li>
             <% end %>
+          </ul>
+          <!-- Setting icon bar -->
+          <ul class="icons">
+            <% if current_user %>
+              <li><%= link_to edit_user_registration_path do %>
+                    <%= fa_icon "user 2x" %>
+                  <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <%= fa_icon "power-off 2x" %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
 
-        </ul>
-        <ul class="icons">
-          <li><a href="<%= home_path %>" class="icon fa-home"></a></li>
-          <% if current_user %>
-            <li><a href="<%= edit_user_registration_path %>" class="icon fa-user"></a></li>
-            <li><%= link_to destroy_user_session_path, method: :delete do %> <i class="icon fa-power-off"></i> <% end %></li>
-          <% end %>
-        </ul>
-      </nav>
-      
-  <div id="main">
-    <%= yield %>
-  </div>
+        <div id="main">
+          <%= yield %>
+        </div>
 
-    <% else %>
-    
-      <%= yield %>
-    <% end %>
+      <% else %>      
+        <%= yield %>
+      <% end %>
+
+    </div>
+      <!-- script -->
+      <%= javascript_include_tag('theme/jquery.min.js') %>
+      <%= javascript_include_tag('theme/jquery.scrollex.min.js') %>
+      <%= javascript_include_tag('theme/jquery.scrolly.min.js') %>
+      <%= javascript_include_tag('theme/skel.min.js') %>
+      <%= javascript_include_tag('theme/util.js') %>
+      <%= javascript_include_tag('theme/main.js') %>
   </body>
 </html>

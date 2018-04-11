@@ -1,4 +1,4 @@
-<% @pageTitle = "Mes Souvenirs" %>
+<% @pageTitle = "Page index" %>
 <section class="posts">
   <% @memories.each do |memory| %>
     <article>
@@ -8,7 +8,7 @@
       </header>
       <p><%= memory.text[0..99] %>...</p>
       <ul class="actions">
-        <li><%= link_to 'Lire la suite', memory, class:"buttonL", style:"background-color:white;border-color:1px solid #C33E3B" %> </li>
+        <li><%= link_to 'Lire la suite', memory, class:"smallRED" %> </li>
       </ul>
     </article>
   <% end %>

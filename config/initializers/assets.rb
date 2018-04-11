@@ -11,4 +11,9 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-# Rails.application.config.assets.precompile += %w( admin.js admin.css )
+Rails.application.config.assets.precompile += %w( theme/jquery.min.js )
+Rails.application.config.assets.precompile += %w( theme/jquery.scrollex.min.js )
+Rails.application.config.assets.precompile += %w( theme/jquery.scrolly.min.js )
+Rails.application.config.assets.precompile += %w( theme/skel.min.js )
+Rails.application.config.assets.precompile += %w( theme/util.js )
+Rails.application.config.assets.precompile += %w( theme/main.js )
