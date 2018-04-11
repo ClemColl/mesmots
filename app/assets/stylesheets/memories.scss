@@ -1,3 +1,22 @@
 // Place all the styles related to the memories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.buttonL {
+    color: #C33E3B;
+    display: inline-block;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.075em;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 2rem;
+    text-align: center;
+    border-radius:3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color:white;
+    border:1px solid #C33E3B
+}

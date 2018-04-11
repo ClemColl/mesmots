@@ -1,6 +1,6 @@
 <% @pageTitle = "Mon compte" %>
 
-<%= link_to "Retour", :back %>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -34,6 +34,7 @@
   </div>
 
   <div class="actions">
+  <%= link_to 'Retour', :back, class: "buttonH" %>
     <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes vous sûr?" }, method: :delete %>
     <%= f.submit "Mettre à jour",style:"float:right;" %>
   </div>

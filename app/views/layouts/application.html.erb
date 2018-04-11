@@ -16,7 +16,7 @@
       <nav id="nav">	
         <ul class="links">
           <li class="active"><a><%= @pageTitle %></a></li>
-            <% if controller.controller_name == "memories" && controller.action_name == "index" %>
+            <% if controller.controller_name == "memories" %>
               <%= link_to 'Nouveau souvenir', new_memory_path, style: "margin-left:20px;" %>
             <% end %>
 

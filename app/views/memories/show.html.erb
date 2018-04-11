@@ -1,8 +1,13 @@
 <% @pageTitle = "Mémoire" %>
-<%= link_to 'Retour', memories_path,style: "border:none;" %>
+
   <h2 style="border:none;"><%= @memory.title %></h2>
   <h4 style="border:none;padding-top:0;"><%= @memory.subtitle %></h4>
   <p style="border:none;padding-top:0;"><% if @memory.date %><%=I18n.l @memory.date, :format => :long%><% end %></p>
   <p style="border:none;"><%= @memory.text %></p>
-<%= link_to 'Modifier', edit_memory_path(@memory),style: "border-top:none;" %>
+
+<div class="actions">
+<%= link_to 'Retour', memories_path, class: "buttonH" %>
+<%= link_to 'Modifier', edit_memory_path(@memory), class: "buttonH", style: "float:right;" %>
+</div>
+
 
