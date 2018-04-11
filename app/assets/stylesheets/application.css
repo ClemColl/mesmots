@@ -3464,15 +3464,10 @@
           -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
           transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
           display: block;
-          font-size: 0.8rem;
+          font-size: 1.4rem;
           outline: none;
           padding: 0 2rem;
         }
-
-          #nav ul.links li a:hover {
-            color: inherit !important;
-            background-color: rgba(255, 255, 255, 0.1);
-          }
 
         #nav ul.links li.active {
           background-color: #ffffff;
@@ -3481,10 +3476,6 @@
           #nav ul.links li.active a {
             color: #1e252d;
           }
-
-            #nav ul.links li.active a:hover {
-              color: #18bfef !important;
-            }
 
     #nav ul.icons {
       -moz-flex-grow: 0;
@@ -4433,4 +4424,34 @@
     background-color: #C33E3B;
     color:white !important;
     box-shadow: none;
+  }
+  
+  .buttonHome1 {
+      border:1px solid #C33E3B;
+      color: #C33E3B !important;
+      font-family: 'Source Sans Pro';
+      border-radius:5px;
+      box-shadow: none;
+  }
+
+  .buttonHome1 {
+    border:1px solid #C33E3B;
+    color: #C33E3B;
+    font-family: 'Source Sans Pro';
+    border-radius:5px;
+    box-shadow: none;
+    float:left;
+    padding:0px 12px;
+  }
+
+  .buttonHome2 {
+    background-color:#C33E3B;
+    color: white;
+    font-family: 'Source Sans Pro';
+    border-radius:5px;
+    border:none;
+    box-shadow: none;
+    float:right;
+    margin-right:10%;
+    padding:0px 12px;
   }

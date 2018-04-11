@@ -10,7 +10,7 @@
 
   <body>
   <%= link_to home_path do %>
-    <%= image_tag "logoblc.png", style:"display:block;width:50%;margin-left:auto;margin-right:auto;" %>
+    <%= image_tag "logoblcaca.png", style:"display:block;width:50%;margin-left:auto;margin-right:auto;" %>
   <% end %>
     <% if !(controller.controller_name == "static" && controller.action_name == "home") %>		
       <nav id="nav">	
@@ -19,7 +19,10 @@
         </ul>
         <ul class="icons">
           <li><a href="<%= home_path %>" class="icon fa-home"></a></li>
-          <li><a href="<%= edit_user_registration_path %>" class="icon fa-user"></a></li>
+          <% if current_user %>
+            <li><a href="<%= edit_user_registration_path %>" class="icon fa-user"></a></li>
+            <li><%= link_to 'X', destroy_user_session_path, method: :delete %></li>
+          <% end %>
           <li><a href="https://www.facebook.com/mesmotsfrance/" target="_blank" class="icon fa-facebook" style="color:#C33E3B;"></a></li>
         </ul>
       </nav>
