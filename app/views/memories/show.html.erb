@@ -7,6 +7,7 @@
 <div class="actions">
   <%= link_to 'Retour', memories_path, class: "linkRED" %>
   <%= link_to 'Modifier', edit_memory_path(@memory), class: "linkRED" %>
+  <%= link_to 'Supprimer', memory_path(@memory), data: { confirm: 'Êtes-vous sûr?' }, method: :delete , class: "linkRED" %>
 </div>
 
 
