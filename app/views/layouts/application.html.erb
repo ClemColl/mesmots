@@ -10,13 +10,13 @@
     <div id="wrapper" class="fade-in">
     <!-- Setting home image -->
       <% if controller.controller_name == "static" && controller.action_name == "home" %>
-        <%= image_tag "logobeige.png", class: "homeLogo" %>
+        <%= image_tag "logoblc.png", class: "homeLogo" %>
       <% else %>
-        <%= image_tag "logobeige.png", class: "logo" %>
+        <%= image_tag "logoblc.png", class: "logo" %>
       <% end %>
       <!-- Setting nav bar -->
-      <% if !(controller.controller_name == "static" && controller.action_name == "home") && !(controller.controller_name == "errors" && controller.action_name == "http_404") %>		
-        <nav id="nav">	
+      <% if !(controller.controller_name == "static" && controller.action_name == "home") && !(controller.controller_name == "errors" && controller.action_name == "http_404") %>
+        <nav id="nav">
           <ul class="links">
             <% if controller.controller_name == "memories" && controller.action_name == "show" %>
               <li><%= link_to 'Mes souvenirs', memories_url %></li>
@@ -55,7 +55,7 @@
           <%= yield %>
         </div>
 
-      <% else %>      
+      <% else %>
         <%= yield %>
       <% end %>
 
